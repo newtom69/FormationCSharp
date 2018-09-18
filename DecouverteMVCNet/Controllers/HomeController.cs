@@ -10,12 +10,8 @@ namespace DecouverteMVCNet.Controllers
 {
     public class HomeController : Controller
     {
-        public int maValeur = 10;
-
         public ActionResult Index()
         {
-            maValeur += 3;
-            ViewBag.maValeur = maValeur;
             ViewBag.DateHeure = DateTime.Now;
 
             ViewBag.erreurSQL=0;
@@ -42,13 +38,12 @@ namespace DecouverteMVCNet.Controllers
                         }
                     }
                 }
+                ViewBag.nbDroides = nbDroides;
             }
             catch
             {
                 ViewBag.erreurSQL = 1;
             }
-
-            ViewBag.nbDroides = nbDroides;
 
             return View();
 
@@ -56,17 +51,12 @@ namespace DecouverteMVCNet.Controllers
 
         public ActionResult About()
                     {
-                        maValeur += 2;
-                        ViewBag.maValeur = maValeur;
                         ViewBag.Message = "Your application description page.";
-
                         return View();
                     }
 
                     public ActionResult Contact()
                     {
-                        maValeur++;
-                        ViewBag.maValeur = maValeur;
                         ViewBag.Message = "Your contact page.";
                         ViewBag.MessageTom = "popopopopopop";
                         return View();
@@ -74,7 +64,6 @@ namespace DecouverteMVCNet.Controllers
                     public ActionResult Thomas()
                     {
                         ViewBag.Message = "Your Thomas page.";
-
                         return View();
                     }
                 }
