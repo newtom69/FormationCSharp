@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="vols" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="vols">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="vol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  
+
+
+
+  <xs:element name="vol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="numero" />
+        <xs:element ref="depart" />
+        <xs:element ref="arrive" />
+        <xs:element ref="escales" minOccurs="0" />
+        <xs:element minOccurs="0" name="reservations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="reservation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="numero" type="xs:unsignedByte" />
+                    <xs:element name="client">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="nom" type="xs:string" />
+                          <xs:element name="prenom" type="xs:string" />
+                        </xs:sequence>
+                        <xs:attribute name="civilite" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="statut" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="ouvert" />
+            <xs:enumeration value="ferme" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="compagnie" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="numero">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Z]{2}[a-zA-Z0-9]{2,9}"></xs:pattern>  
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="depart">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="date" type="xs:date" use="required" />
+          <xs:attribute name="horaire" type="xs:time" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="arrive">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="date" type="xs:date" use="required" />
+          <xs:attribute name="horaire" type="xs:time" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="escales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="escale" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="escale">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="heureArrive" type="xs:time" use="required" />
+          <xs:attribute name="heureDepart" type="xs:time" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

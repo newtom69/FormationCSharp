@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href= "Agence.xslt" ?>
+<agence xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Agence.xsd">
+
+  <vols>
+
+    <vol statut="ouvert" compagnie="Air France">
+      <numero>AF73632</numero>
+      <depart date="2018-10-08" horaire="10:05:00">Lille</depart>
+      <arrive date="2018-10-08" horaire="11:50:00">Nice</arrive>
+      <reservations>
+        <reservation>
+          <numero>1</numero>
+          <client civilite="homme">
+            <nom>Abid</nom>
+            <prenom>Jordan</prenom>
+          </client>
+        </reservation>
+        <reservation>
+          <numero>2</numero>
+          <client civilite="homme">
+            <nom>Vuille</nom>
+            <prenom>Thomas</prenom>
+          </client>
+        </reservation>
+
+      </reservations>
+    </vol>
+
+    <vol statut="ouvert" compagnie="Turkish Airlines">
+      <numero>TA37800</numero>
+      <depart date="2018-10-11" horaire="12:05:00">Paris</depart>
+      <arrive date="2018-10-11" horaire="20:40:00">Ankara</arrive>
+      <escales>
+        <escale heureArrive="14:10:00" heureDepart="15:20:00">Rome</escale>
+      </escales>
+    </vol>
+
+    <vol statut="ferme" compagnie="Lufthansa">
+      <numero>LH2223</numero>
+      <depart date="2018-09-13" horaire="08:05:00">Toulouse</depart>
+      <arrive date="2018-09-14" horaire="02:45:00">Tokyo</arrive>
+      <escales>
+        <escale heureArrive="08:55:00" heureDepart="09:20:00">Munich</escale>
+        <escale heureArrive="20:30:00" heureDepart="21:10:00">Hong Kong</escale>
+      </escales>
+    </vol>
+
+    <vol statut="ouvert" compagnie="Lufthansa">
+      <numero>LH28478489</numero>
+      <depart date="2018-09-17" horaire="07:05:00">Toulouse</depart>
+      <arrive date="2018-09-17" horaire="17:45:00">Ankara</arrive>
+      <escales>
+        <escale heureArrive="08:55:00" heureDepart="09:15:00">Paris</escale>
+        <escale heureArrive="11:35:00" heureDepart="14:45:00">Rome</escale>
+      </escales>
+    </vol>
+
+  </vols>
+</agence>

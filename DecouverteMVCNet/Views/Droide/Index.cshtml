@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    int i = 0;
+}
+<h2>Liste des Droides</h2>
+
+@foreach (object item in ViewBag.MaListe)
+{
+    i++;
+    <br/><l>élement numéro @i : @item </l>
+}

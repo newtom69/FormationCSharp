@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Nos elements simples : 
+Statut (att),compagnie(attr),numero(balise),date(attr),
+heure(attr),heureArrive(attr),heureDepart(attr)
+-->
+  <xs:simpleType name="typeStatut">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ouvert"/>
+      <xs:enumeration value="ferme"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="numero" type="xs:string"/>
+  <xs:attribute name="statut" type="typeStatut"/>
+  <xs:attribute name="compagnie" type="xs:string"/>
+  <xs:attribute name="date" type="xs:date"/>
+  <xs:attribute name="heure" type="xs:time"/>
+  <xs:attribute name="heureDepart" type="xs:time"/>
+  <xs:attribute name="heureArrive" type="xs:time"/>
+
+
+  <!-- Element complexe : 
+Agence,Vol,Vols,escales,escale,depart,arrive
+ -->
+
+  <!-- Contenus simple 
+depart,arrive,escale-->
+  <xs:element name="escale">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute ref="heureDepart" use="required"/>
+          <xs:attribute ref="heureArrive" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+
+
+  <xs:element name="depart">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute ref="date" use="required"/>
+          <xs:attribute ref="heure" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="arrive">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute ref="date" use="required"/>
+          <xs:attribute ref="heure" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+
+
+
+  <xs:element name="escales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="escale" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="vol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="numero"/>
+        <xs:element ref="depart"/>
+        <xs:element ref="arrive"/>
+        <xs:element ref="escales" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute ref="compagnie" use="required"/>
+      <xs:attribute ref="statut" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="vols">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="vol" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="agence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="vols" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

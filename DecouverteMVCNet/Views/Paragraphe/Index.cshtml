@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Paragraphe";
+}
+
+<p>@ViewBag.LeParagraphe</p>
+
+@ViewBag.LaQuestion
+<ul>
+    @foreach (object reponse in ViewBag.LaListeReponses)
+    {
+        <li>@reponse</li>
+    }
+</ul>
