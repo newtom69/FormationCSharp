@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Configuration;
+using JeuDroides.Core.Properties;
 
 namespace JeuDroides.Core.Models
 {
@@ -16,7 +18,7 @@ namespace JeuDroides.Core.Models
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = Properties.Settings.Default.MaConnexion;
+                connection.ConnectionString = Settings.Default.MaConnexion;
                 connection.Open();
 
                 using (SqlCommand command = connection.CreateCommand())

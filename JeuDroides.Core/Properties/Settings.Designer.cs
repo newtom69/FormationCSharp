@@ -26,8 +26,7 @@ namespace JeuDroides.Core.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ns334685.ip-5-196-66.eu;Database=JeuDroidesFormation;User Id=formatio" +
-            "n.user;Password = formation.user!;Connection Timeout=5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("a définir")]
         public string MaConnexion {
             get {
                 return ((string)(this["MaConnexion"]));
