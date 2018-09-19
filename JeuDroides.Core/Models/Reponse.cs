@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DecouverteMVCNet.Models
+namespace JeuDroides.Core.Models
 {
     public class Reponse : Texte
     {
