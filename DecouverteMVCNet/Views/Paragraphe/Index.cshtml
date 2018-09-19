@@ -2,12 +2,12 @@
     ViewBag.Title = "Paragraphe";
 }
 
-<p>@ViewBag.LeParagraphe</p>
+<p>@ViewBag.LeParagraphe.Contenu</p>
 
-@ViewBag.LaQuestion
+@ViewBag.LeParagraphe.LaQuestion.Contenu
 <ul>
-    @foreach (object reponse in ViewBag.LaListeReponses)
+    @foreach (var reponse in ViewBag.LeParagraphe.LaQuestion.LesReponses)
     {
-        <li>@reponse</li>
+        <li>@reponse.Contenu</li>
     }
 </ul>
