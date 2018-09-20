@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<ul>
+    les Droides dont le nom commence par @ViewBag.laPremiereLettre :
+    @foreach (var droide in ViewBag.laPopulationDroides.lesDroides)
+    {
+        <li>@droide.nom</li>
+    }
+</ul>

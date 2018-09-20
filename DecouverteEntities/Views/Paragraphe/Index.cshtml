@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DecouverteEntities.Models.Paragraphe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Les paragraphes</h2>
+
+<p>
+    @Html.ActionLink("Créer nouveau", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contenu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contenu)
+        </td>
+        <td>
+            @Html.ActionLink("éditer", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("détails", "Details", new { id = item.Id }) |
+            @Html.ActionLink("effacer", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
