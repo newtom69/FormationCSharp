@@ -20,22 +20,31 @@ namespace DecouverteEntities.Controllers
 
                 return View(requete.ToList());
             }
-            
         }
 
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            //using (JeuDroidesFormationEntities context = new JeuDroidesFormationEntities())
-            //{
-            //    var requete = from para in context.Paragraphe
-            //        orderby para.Numero
-            //        select para;
+            using (JeuDroidesFormationEntities context = new JeuDroidesFormationEntities())
+            {
+                var requete = from para in context.Paragraphe
+                    where para.Id == id
+                    orderby para.Numero
+                    select para;
 
-            //    return View(requete.ToList());
-            //}
+                Paragraphe leParagraphe = requete.SingleOrDefault(); // ou First();
+                return View(leParagraphe);
+            }
 
+         
+
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Paragraphe paragraphe)
+        {
             return View();
+
         }
     }
 }
