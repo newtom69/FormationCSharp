@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9C1EB0C9-B5FD-4874-A3A9-818967BBAA16}</ProjectGuid>
+    <ProjectGuid>{28CD1C71-47E0-4699-A9EA-93F9F014BA7A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DecouverteEntities</RootNamespace>
-    <AssemblyName>DecouverteEntities</AssemblyName>
+    <RootNamespace>DecouverteAddEntities</RootNamespace>
+    <AssemblyName>DecouverteAddEntities</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -155,43 +155,28 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DroideController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ParagrapheController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ContexteParDefaut.Context.cs">
+    <Compile Include="Models\ContextEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ContexteParDefaut.Context.tt</DependentUpon>
+      <DependentUpon>ContextEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ContexteParDefaut.cs">
+    <Compile Include="Models\ContextEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
+      <DependentUpon>ContextEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ContexteParDefaut.Designer.cs">
+    <Compile Include="Models\JeuDroidesFormationEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ContexteParDefaut.edmx</DependentUpon>
+      <DependentUpon>JeuDroidesFormationEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Droide.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Paragraphe.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Planete.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Question.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Reponse.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Wookie.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
+      <DependentUpon>ContextEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -204,27 +189,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ContexteParDefaut.Context.tt">
+    <Content Include="Models\ContextEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ContexteParDefaut.Context.cs</LastGenOutput>
-      <DependentUpon>ContexteParDefaut.edmx</DependentUpon>
+      <LastGenOutput>ContextEntities.Context.cs</LastGenOutput>
+      <DependentUpon>JeuDroidesFormationEntities.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\ContexteParDefaut.tt">
+    <Content Include="Models\ContextEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ContexteParDefaut.edmx</DependentUpon>
-      <LastGenOutput>ContexteParDefaut.cs</LastGenOutput>
+      <DependentUpon>JeuDroidesFormationEntities.edmx</DependentUpon>
+      <LastGenOutput>ContextEntities.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\ContexteParDefaut.edmx">
+    <EntityDeploy Include="Models\JeuDroidesFormationEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ContexteParDefaut.Designer.cs</LastGenOutput>
+      <LastGenOutput>JeuDroidesFormationEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ContexteParDefaut.edmx.diagram">
-      <DependentUpon>ContexteParDefaut.edmx</DependentUpon>
+    <Content Include="Models\JeuDroidesFormationEntities.edmx.diagram">
+      <DependentUpon>JeuDroidesFormationEntities.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -251,9 +236,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Paragraphe\Index.cshtml" />
-    <Content Include="Views\Paragraphe\Edit.cshtml" />
-    <Content Include="Views\Paragraphe\Ajouter.cshtml" />
+    <Content Include="Views\Droide\Ajouter.cshtml" />
+    <Content Include="Views\Droide\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,9 +274,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55169</DevelopmentServerPort>
+          <DevelopmentServerPort>50102</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55169/</IISUrl>
+          <IISUrl>http://localhost:50102/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9C1EB0C9-B5FD-4874-A3A9-818967BBAA16}</ProjectGuid>
+    <ProjectGuid>{79D4C20D-83BA-415E-998D-B97F542895C8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DecouverteEntities</RootNamespace>
-    <AssemblyName>DecouverteEntities</AssemblyName>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -45,18 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -156,42 +148,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ParagrapheController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ContexteParDefaut.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ContexteParDefaut.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ContexteParDefaut.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ContexteParDefaut.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ContexteParDefaut.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Droide.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Paragraphe.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Planete.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Question.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Reponse.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Wookie.cs">
-      <DependentUpon>ContexteParDefaut.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -204,27 +162,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ContexteParDefaut.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ContexteParDefaut.Context.cs</LastGenOutput>
-      <DependentUpon>ContexteParDefaut.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\ContexteParDefaut.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ContexteParDefaut.edmx</DependentUpon>
-      <LastGenOutput>ContexteParDefaut.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\ContexteParDefaut.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ContexteParDefaut.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ContexteParDefaut.edmx.diagram">
-      <DependentUpon>ContexteParDefaut.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -251,12 +192,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Paragraphe\Index.cshtml" />
-    <Content Include="Views\Paragraphe\Edit.cshtml" />
-    <Content Include="Views\Paragraphe\Ajouter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -270,9 +209,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -290,9 +226,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55169</DevelopmentServerPort>
+          <DevelopmentServerPort>51399</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55169/</IISUrl>
+          <IISUrl>http://localhost:54952/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

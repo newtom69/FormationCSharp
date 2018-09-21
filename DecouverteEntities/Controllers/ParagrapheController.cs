@@ -35,16 +35,32 @@ namespace DecouverteEntities.Controllers
                 Paragraphe leParagraphe = requete.SingleOrDefault(); // ou First();
                 return View(leParagraphe);
             }
-
-         
-
         }
 
         [HttpPost]
         public ActionResult Edit(Paragraphe paragraphe)
         {
             return View();
+        }
 
+        public ActionResult Ajouter()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Ajouter(Paragraphe paragraphe)
+        {
+            using (JeuDroidesFormationEntities context = new JeuDroidesFormationEntities())
+            {
+                context.Paragraphe.Add(paragraphe);
+                context.SaveChanges();
+            }
+
+            string ajoutOk = "Ajout paragraphe ok";
+            ViewBag.ajoutOk = ajoutOk;
+            return View(paragraphe);
         }
     }
 }
