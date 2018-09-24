@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C2292712-BF43-4C43-BD49-B14E508BFA5A}</ProjectGuid>
+    <ProjectGuid>{CCD2CD18-266A-457B-85B9-D71E600189BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MaSuperLibrairie</RootNamespace>
@@ -49,51 +49,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLayers\ParagrapheDataLayer.cs" />
-    <Compile Include="Models\MonSuperContext.Context.cs">
+    <Compile Include="DataLayers\ParagrapheLataLayer.cs" />
+    <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MonSuperContext.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MonSuperContext.cs">
+    <Compile Include="Models\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MonSuperContext.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MonSuperContext.Designer.cs">
+    <Compile Include="Models\ContextHistoire.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MonSuperContext.edmx</DependentUpon>
+      <DependentUpon>ContextHistoire.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Paragraphe.cs">
-      <DependentUpon>MonSuperContext.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EntityDeploy Include="Models\MonSuperContext.edmx">
+    <EntityDeploy Include="Models\ContextHistoire.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MonSuperContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>ContextHistoire.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Models\MonSuperContext.edmx.diagram">
-      <DependentUpon>MonSuperContext.edmx</DependentUpon>
+    <None Include="Models\ContextHistoire.edmx.diagram">
+      <DependentUpon>ContextHistoire.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\MonSuperContext.Context.tt">
+    <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MonSuperContext.Context.cs</LastGenOutput>
-      <DependentUpon>MonSuperContext.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>ContextHistoire.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\MonSuperContext.tt">
+    <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MonSuperContext.edmx</DependentUpon>
-      <LastGenOutput>MonSuperContext.cs</LastGenOutput>
+      <DependentUpon>ContextHistoire.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
