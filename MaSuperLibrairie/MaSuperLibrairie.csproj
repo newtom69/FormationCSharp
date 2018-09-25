@@ -49,16 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLayers\ParagrapheLataLayer.cs" />
-    <Compile Include="Models\Model1.Context.cs">
+    <Compile Include="DataLayers\ParagrapheDataLayer.cs" />
+    <Compile Include="Models\ContextHistoire.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>ContextHistoire.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.cs">
+    <Compile Include="Models\ContextHistoire.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ContextHistoire.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ContextHistoire.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -66,7 +66,7 @@
       <DependentUpon>ContextHistoire.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Paragraphe.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ContextHistoire.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,15 +85,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\ContextHistoire.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <LastGenOutput>ContextHistoire.Context.cs</LastGenOutput>
       <DependentUpon>ContextHistoire.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\ContextHistoire.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ContextHistoire.cs</LastGenOutput>
       <DependentUpon>ContextHistoire.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

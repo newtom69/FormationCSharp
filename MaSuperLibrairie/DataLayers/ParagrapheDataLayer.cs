@@ -4,7 +4,7 @@ using MaSuperLibrairie.Models;
 
 namespace MaSuperLibrairie.DataLayers
 {
-    public class ParagrapheLataLayer
+    public class ParagrapheDataLayer
     {
         public List<Paragraphe> GetAll()
         {
@@ -15,6 +15,18 @@ namespace MaSuperLibrairie.DataLayers
                               select para;
 
                 return requete.ToList();
+            }
+
+        }
+
+        public Paragraphe GetOne(int numero)
+        {
+            using (JeuDroidesFormationEntities context = new JeuDroidesFormationEntities())
+            {
+                var requeteOne = from para in context.Paragraphe
+                              where para.Numero == numero
+                              select para;
+                return requeteOne.Single();
             }
 
         }
