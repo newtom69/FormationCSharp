@@ -79,7 +79,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EntityDeploy Include="Models\MonSuperContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

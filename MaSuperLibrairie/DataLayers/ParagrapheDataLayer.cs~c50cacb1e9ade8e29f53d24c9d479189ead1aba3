@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using MaSuperLibrairie.Models;
-using Paragraphe = MaSuperLibrairie.Models.Paragraphe;
 
 namespace MaSuperLibrairie.DataLayers
 {
@@ -9,7 +8,7 @@ namespace MaSuperLibrairie.DataLayers
     {
         public List<Paragraphe> GetAll()
         {
-            using (MonSuperContext context = new MonSuperContext())
+            using (JeuDroidesFormationEntities context = new JeuDroidesFormationEntities())
             {
                 var requete = from para in context.Paragraphe
                               orderby para.Numero
@@ -22,7 +21,7 @@ namespace MaSuperLibrairie.DataLayers
 
         public Paragraphe GetOne(int numero)
         {
-            using (MonSuperContext context = new MonSuperContext())
+            using (JeuDroidesFormationEntities context = new JeuDroidesFormationEntities())
             {
                 var requeteOne = from para in context.Paragraphe
                               where para.Numero == numero
