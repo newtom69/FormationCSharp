@@ -1,9 +1,6 @@
-﻿using MaSuperLibrairie.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MaSuperLibrairie.Models;
 
 namespace MaSuperLibrairie.DataLayers
 {
@@ -11,18 +8,27 @@ namespace MaSuperLibrairie.DataLayers
     {
         public List<Paragraphe> GetAll()
         {
-            using (Models.MonSuperContext context = new MonSuperContext())
+            using (JeuDroidesFormationEntities context = new JeuDroidesFormationEntities())
             {
-                var query = from unParagraphe in context.Paragraphe
-                            orderby unParagraphe.Numero
-                            select unParagraphe;
+                var requete = from para in context.Paragraphe
+                              orderby para.Numero
+                              select para;
 
-                return query.ToList();
-
-                //return context.Paragraph
-                //              .OrderBy(item => item.Numero)
-                //              .ToList();
+                return requete.ToList();
             }
+
+        }
+
+        public Paragraphe GetOne(int numero)
+        {
+            using (JeuDroidesFormationEntities context = new JeuDroidesFormationEntities())
+            {
+                var requeteOne = from para in context.Paragraphe
+                              where para.Numero == numero
+                              select para;
+                return requeteOne.Single();
+            }
+
         }
     }
 }
