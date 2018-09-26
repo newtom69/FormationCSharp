@@ -15,7 +15,6 @@ namespace ProjetAPI.Controllers
         {
             ParagrapheDataLayer monParagrapheDataLayer = new ParagrapheDataLayer();
             List<Paragraphe> listParagraphes = monParagrapheDataLayer.GetAll();
-
             return listParagraphes;
         }
 

@@ -13,9 +13,9 @@ namespace MaSuperLibrairie.DataLayers
         {
             using (Models.MonSuperContext context = new MonSuperContext())
             {
-                var query = from unevariablecommetuveux in context.Paragraphe
-                            orderby unevariablecommetuveux.Numero
-                            select unevariablecommetuveux;
+                var query = from unParagraphe in context.Paragraphe
+                            orderby unParagraphe.Numero
+                            select unParagraphe;
 
                 return query.ToList();
 
